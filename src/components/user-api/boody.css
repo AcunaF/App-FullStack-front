@@ -1,0 +1,56 @@
+.body {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f4f4f4;
+}
+
+table th {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+table tr:nth-child(even) {
+  background-color: #e0e0e0;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+.edit-button,
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.edit-button {
+  color: #3498db; /* Color azul para editar */
+}
+
+.delete-button {
+  color: #e74c3c; /* Color rojo para borrar */
+}

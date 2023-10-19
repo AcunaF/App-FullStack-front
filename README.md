@@ -1,70 +1,16 @@
-# Getting Started with Create React App
+Desarrollo de una Aplicación Fullstack con React, Node y Oracle
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En esta prueba, se solicita a los candidatos que desarrollen una aplicación fullstack que combine tecnologías frontend y backend. Utilizarán React para el frontend, Node.js para el backend y Oracle como base de datos. Además, los datos necesarios serán obtenidos de la API pública en https://jsonplaceholder.typicode.com.
 
-## Available Scripts
+Requisitos de la Aplicación:
 
-In the project directory, you can run:
+Base de Datos Oracle: Los candidatos deberán configurar una base de datos Oracle para almacenar los datos de los usuarios administradores de la aplicación, estos mismos podrán ver todos los usuarios de la aplicación y borrar los posts de cada uno.
 
-### `npm start`
+Autenticación de Usuarios en el Backend: El backend de la aplicación deberá implementar un sistema de autenticación de usuarios administradores. Los candidatos deberán permitir que los administradores creen cuentas y se encargará de verificar las credenciales de inicio de sesión. Además, se asegurará de que las operaciones solo estén disponibles para usuarios autenticados.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Página Web: Los candidatos crearán una página web que consta de lo siguiente:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+● Inicio de Sesión / Registro: Los administradores podrán iniciar sesión o registrarse en la aplicación.
+● Página Principal: Después de iniciar sesión, los usuarios verán una página principal que mostrará el nombre y apellido de los usuarios obtenidos de https://jsonplaceholder.typicode.com/users.
+● Perfil de Usuario: Al seleccionar un usuario de la lista, se abrirá una página de perfil que mostrará detalles adicionales, como el nombre, apellido, correo electrónico, nombre de usuario, teléfono y sitio web del usuario. Además, se mostrarán los posts del usuario, que serán obtenidos de https://jsonplaceholder.typicode.com/posts. Se deberá contar con un botón que permita eliminar el post seleccionado.
+● Diseño de la Página Web: Los candidatos tienen la libertad de diseñar la página web según su elección. Se recomienda el uso de Bootstrap para lograr una apariencia atractiva y funcional.

@@ -12,18 +12,13 @@ function Navbar() {
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/home" className="navbar-link">
+            <Link to="/users" className="navbar-link">
               Usuarios Registrados
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/boody" className="navbar-link">
+            <Link to="/users-api" className="navbar-link">
               Users Api
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/BodyWithList" className="navbar-link">
-              Principal
             </Link>
           </li>
         </ul>

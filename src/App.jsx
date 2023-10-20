@@ -1,11 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./components/login/Login";
-import Register from "./components/register/userRegist";
-import Home from "./components/home/Home";
+import LoginScreen from "./screens/login/LoginScreen";
+import SignupScreen from "./screens/signup/SignupScreen";
+import HomeScreen from "./screens/home/HomeScreen";
+import UsersScreen from "./screens/users/UsersScreen";
+import PrivateScreen from "./screens/private/PrivateScreen";
+import NoMatchScreen from "./screens/no-match/NoMatchScreen";
+import UsersApiScreen from "./screens/users-api/UsersApiScreen";
 import Navbar from "./components/navbar/NavBar";
-import Boody from "./components/user-api/boody";
-import BodyWithList from "./components/body/BodyWithList";
 
 import "./App.css";
 
@@ -15,11 +17,13 @@ function App() {
       <div className="App" style={{ flex: "1" }}>
         <Navbar />
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/boody" element={<Boody />} />
-          <Route path="/home" element={<Home />} />
-          <Route exact path="/BodyWithList" element={<BodyWithList />} />
+          <Route exact path="/" element={<HomeScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/signup" element={<SignupScreen />} />
+          <Route path="/users-api" element={<UsersApiScreen />} />
+          <Route path="/users" element={<UsersScreen />} />
+          <Route path="/private" element={<PrivateScreen />} />
+          <Route path="*" element={<NoMatchScreen />} />
         </Routes>
       </div>
     </Router>

@@ -7,9 +7,9 @@ import {
   faCheck,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
-import "./Home.css";
+import "./UsersScreen.css";
 
-function Home() {
+function UsersScreen() {
   const [users, setUsers] = useState([]);
   const [editingUserId, setEditingUserId] = useState(null);
   const [editedUser, setEditedUser] = useState({});
@@ -210,4 +210,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default UsersScreen;

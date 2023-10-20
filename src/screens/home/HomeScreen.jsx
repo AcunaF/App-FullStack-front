@@ -1,5 +1,5 @@
 import React from "react";
-import "./body2.css";
+import "./HomeScreen.css";
 
 const articles = [
   {
@@ -79,7 +79,7 @@ const articles = [
   },
 ];
 
-const ArticleList = () => {
+const HomeScreen = () => {
   return (
     <div className="article-list">
       {articles.map((article) => (
@@ -93,4 +93,4 @@ const ArticleList = () => {
   );
 };
 
-export default ArticleList;
+export default HomeScreen;

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Corrige esta línea
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
-import "./boody.css";
+import "./UsersApiScreen.css";
 
-function Boody() {
+function UsersApiScreen() {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
 
@@ -88,4 +88,4 @@ function Boody() {
   );
 }
 
-export default Boody;
+export default UsersApiScreen;

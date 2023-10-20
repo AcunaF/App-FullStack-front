@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import "./userRegist.css";
+import "./SignupForm.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
-function Register() {
+function SignupForm() {
+  const navigate = useNavigate();
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [correo_electronico, setEmail] = useState("");
@@ -12,7 +16,7 @@ function Register() {
   const handleRegister = async () => {
     try {
       // Lógica para enviar una solicitud POST al servidor para el registro ok
-      const response = await fetch("http://localhost:3000/users", {
+      const response = await fetch("http://localhost:3000/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,11 +33,15 @@ function Register() {
 
       if (response.ok) {
         console.log("Registro exitoso");
+        navigate("/login");
       } else {
         console.error("Registro fallido");
+
+        toast.error("Hubo un error para registrar el usuario");
       }
     } catch (error) {
       console.error("Error de registro:", error);
+      toast.error("Ups, hubo un error. Intente nuevamente");
     }
   };
 
@@ -108,8 +116,9 @@ function Register() {
           Registrarse
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 }
 
-export default Register;
+export default SignupForm;

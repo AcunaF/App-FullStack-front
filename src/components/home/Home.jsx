@@ -68,7 +68,7 @@ function Home() {
   };
 
   return (
-    <div className="container">
+    <div className="container-user-regist">
       <h1>Lista de Usuarios Registrados</h1>
       <table>
         <thead>

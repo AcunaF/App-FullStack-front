@@ -1,38 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Register from "../register/userRegist";
 import "./Login.css";
 
-function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Login = () => {
+  const [correo_electronico, setEmail] = useState("");
+  const [contrasena, setPassword] = useState("");
   const [showRegisterForm, setShowRegisterForm] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
-  const [showRegisteredUsers, setShowRegisteredUsers] = useState(false);
-  const [showUserAPI, setShowUserAPI] = useState(false);
-
-  useEffect(() => {
-    // verificar si el usuario ya está autenticado y establecer setLoggedIn(true) si lo está
-  }, []);
 
   const handleLogin = async () => {
+    if (!correo_electronico || !contrasena) {
+      setErrorMessage("Por favor, complete ambos campos.");
+      return;
+    }
+
+    // Validación de formato de correo electrónico
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+    if (!emailRegex.test(correo_electronico)) {
+      setErrorMessage("El correo electrónico no es válido.");
+      return;
+    }
+
     try {
-      // inicio de sesión
-      const response = await fetch("http://localhost:3000/users", {
+      const response = await fetch("http://localhost:3000/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ correo_electronico, contrasena }),
       });
 
       if (response.ok) {
-        // El inicio de sesión fue exitoso
-        setLoggedIn(true); // Actualiza el estado para indicar que el usuario ha iniciado sesión
-        setShowRegisteredUsers(true); // Muestra "Usuarios registrados"
-        setShowUserAPI(true); // Muestra "User API"
+        setLoggedIn(true);
       } else {
-        // El inicio de sesión falló, muestra un mensaje
         setErrorMessage("Credenciales incorrectas. Inténtalo de nuevo.");
       }
     } catch (error) {
@@ -41,20 +42,19 @@ function Login() {
     }
   };
 
-  const handleToggleRegister = () => {
+  const toggleForm = () => {
     setShowRegisterForm(!showRegisterForm);
   };
 
   return (
     <div className="login-container">
       {loggedIn ? (
-        <>
+        <div>
           <h2>Bienvenido, has iniciado sesión con éxito.</h2>
-          {showRegisteredUsers && <p>Usuarios registrados</p>}
-          {showUserAPI && <p>User API</p>}
-        </>
+          <button className="login-button">Continuar</button>
+        </div>
       ) : (
-        <>
+        <div>
           <h2 className="login-title">
             {showRegisterForm ? "Registrarse" : "Iniciar Sesión"}
           </h2>
@@ -67,7 +67,7 @@ function Login() {
                 <input
                   type="email"
                   id="email"
-                  value={email}
+                  value={correo_electronico}
                   onChange={(e) => setEmail(e.target.value)}
                   className="input-field"
                 />
@@ -77,7 +77,7 @@ function Login() {
                 <input
                   type="password"
                   id="password"
-                  value={password}
+                  value={contrasena}
                   onChange={(e) => setPassword(e.target.value)}
                   className="input-field"
                 />
@@ -97,14 +97,14 @@ function Login() {
             {showRegisterForm
               ? "¿Ya tienes una cuenta? "
               : "¿No tienes una cuenta? "}
-            <span onClick={handleToggleRegister} className="login-link">
+            <span onClick={toggleForm} className="login-link">
               {showRegisterForm ? "Iniciar Sesión" : "Registrarse"}
             </span>
           </p>
-        </>
+        </div>
       )}
     </div>
   );
-}
+};
 
 export default Login;

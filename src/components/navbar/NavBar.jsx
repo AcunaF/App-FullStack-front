@@ -5,15 +5,6 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-content">
-        <div className="logo">
-          <a href="/">
-            <img
-              src="https://cabanias.wordpress.com/files/2009/10/tandil-1.jpg"
-              alt=""
-            />
-          </a>
-        </div>
-
         <ul className="navbar-list">
           <li className="navbar-item">
             <Link to="/login" className="navbar-link">
@@ -31,7 +22,7 @@ function Navbar() {
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/body2" className="navbar-link">
+            <Link to="/BodyWithList" className="navbar-link">
               Principal
             </Link>
           </li>

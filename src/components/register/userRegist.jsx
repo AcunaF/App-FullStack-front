@@ -39,7 +39,6 @@ function Register() {
 
   return (
     <div className="register-form">
-      <h2>Registro</h2>
       <form>
         <div className="form-group">
           <label htmlFor="nombre">Nombre</label>

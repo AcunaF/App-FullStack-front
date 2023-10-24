@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./SignupForm.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
 function SignupForm() {
@@ -11,11 +12,10 @@ function SignupForm() {
   const [correo_electronico, setEmail] = useState("");
   const [nombre_usuario, setNombreUsuario] = useState("");
   const [contrasena, setContrasena] = useState("");
-  const [rol_id, setRol] = useState(""); // ¿estado para el rol?
+  const [rol_id, setRol] = useState("");
 
   const handleRegister = async () => {
     try {
-      // Lógica para enviar una solicitud POST al servidor para el registro ok
       const response = await fetch("http://localhost:3000/auth/signup", {
         method: "POST",
         headers: {
@@ -33,11 +33,11 @@ function SignupForm() {
 
       if (response.ok) {
         console.log("Registro exitoso");
+        toast.success("Usuario registrado exitosamente");
         navigate("/login");
       } else {
         console.error("Registro fallido");
-
-        toast.error("Hubo un error para registrar el usuario");
+        toast.error("Hubo un error al registrar el usuario");
       }
     } catch (error) {
       console.error("Error de registro:", error);

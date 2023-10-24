@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-import "./UsersApiScreen.css";
-
-function UsersApiScreen() {
+function UsersApiFake() {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
 
@@ -28,21 +24,6 @@ function UsersApiScreen() {
     fetchUsersAndPosts();
   }, []);
 
-  const handleEdit = (userId) => {
-    if (window.confirm("¿Estás seguro de que deseas editar este usuario?")) {
-      // Lógica de edición (puedes mostrar un formulario, etc.)
-
-      console.log("Editando usuario con ID:", userId);
-    }
-  };
-
-  const handleDelete = (userId) => {
-    if (window.confirm("¿Estás seguro de que deseas eliminar este usuario?")) {
-      // Lógica de borrado (puedes enviar una solicitud DELETE a la API)
-      console.log("Borrando usuario con ID:", userId);
-    }
-  };
-
   return (
     <div className="container">
       <h1 className="mt-4">Lista de Usuarios y sus Publicaciones</h1>
@@ -53,7 +34,6 @@ function UsersApiScreen() {
             <th>Usuario</th>
             <th>Correo Electrónico</th>
             <th>Publicaciones</th>
-            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -71,20 +51,6 @@ function UsersApiScreen() {
                     ))}
                 </ul>
               </td>
-              <td>
-                <button
-                  className="btn btn-primary"
-                  onClick={() => handleEdit(user.id)}
-                >
-                  <FontAwesomeIcon icon={faEdit} /> Editar
-                </button>
-                <button
-                  className="btn btn-danger"
-                  onClick={() => handleDelete(user.id)}
-                >
-                  <FontAwesomeIcon icon={faTrash} /> Borrar
-                </button>
-              </td>
             </tr>
           ))}
         </tbody>
@@ -93,4 +59,4 @@ function UsersApiScreen() {
   );
 }
 
-export default UsersApiScreen;
+export default UsersApiFake;

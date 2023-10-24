@@ -38,8 +38,7 @@
   table tr:hover {
     background-color: #ddd;
   }
-  
-  .edit-button,
+
   .delete-button {
     background-color: transparent;
     border: none;
@@ -55,4 +54,5 @@
   .delete-button {
     color: #e74c3c; 
   }
+  
   

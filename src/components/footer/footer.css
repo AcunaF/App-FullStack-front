@@ -8,7 +8,7 @@
 .footer-content {
   padding: 10px;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
 }
 
@@ -25,8 +25,8 @@ a {
 }
 
 .github-link {
-  display: flex;
-  align-items: center;
+
+  align-items: end;
   text-decoration: none;
   color: #333;
 }
